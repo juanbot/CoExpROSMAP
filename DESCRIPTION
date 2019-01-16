@@ -1,16 +1,17 @@
 Package: CoExpROSMAP
 Type: Package
-Title: This package is a suite of co-expression networks to be used with 
-CoExpNets package, also available in GitHub. It is based on the ROSMAP project.
+Title: Co-expression network suite from ROS/MAP project
 Version: 0.1.0
 Author: Juan A. Botia
-Maintainer: Juan A. Botia <juanbot@um.es>
-Description: It contains 4 co-expression networks from > 600 samples of frontal cortex from 
-the ROSMAP study. They have variable cognitive decline. Consequently, they were divided into not
-AD, probable AD and AD. A co-expression network is available for each groups and a single network
-with all samples.
+Maintainer: Juan A. Botia <juanbotiablaya@gmail.com>
+Description: This package works on gene expression profiling to create
+    co-expression networks. It is based in WGCNA and a post-process 
+    phase based on the k-means algorithm for a better redistribution of
+    some of the genes. See details at 
+    https://bmcsystbiol.biomedcentral.com/articles/10.1186/s12918-017-0420-6
 License: Creative Commons
 Encoding: UTF-8
 LazyData: true
 Imports: 
-  CoExpNets
+    CoExpNets
+RoxygenNote: 6.1.1

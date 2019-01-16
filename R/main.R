@@ -3,9 +3,10 @@
 #' CoExpNets
 #'
 #'
-#' @param mandatory
+#' @param mandatory If this parameter is `TRUE` then the networks will be added no matter whether they were already there.
+#' 
 #'
-#' @return
+#' @return No value
 #' @export
 #'
 #' @examples
