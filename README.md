@@ -11,10 +11,12 @@ In the package you will find networks for the following tissues
 ```r
 library(CoExpNets)
 library(CoExpROSMAP)
-> getGTExTissues()
-> getAvailableNetworks()
-[1] "notad"      "probad"     "ad"         "allsamples"
+CoExpROSMAP::initDb()
+getAvailableNetworks()
 ```
+
+`[1] "notad"      "probad"     "ad"         "allsamples"`
+
 Each network is compound of
 * An RDS file with the network itself. When reading the object you obtain a list with `moduleColors` and `MEs`, the clustering of nodes and the module eigengenes respectively.
 * A csv with the enrichment for the modules from the Gene Ontology, REACTOME and KEGG pathway annotation databases.
