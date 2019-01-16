@@ -28,8 +28,9 @@ Recommended that you install first CoExpNets
 ```r
 devtools::install_github('juanbot/CoExpNets')
 ```
-And then this package
+And then this package, and then you install the networks so you can access them from the CoExpNets functions.
 
 ```r
 devtools::install_github('juanbot/CoExpROSMAP')
+CoExpROSMAP::initDb()
 ```
