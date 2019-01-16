@@ -6,7 +6,7 @@
 #' @param mandatory If this parameter is `TRUE` then the networks will be added no matter whether they were already there.
 #' 
 #'
-#' @return No value
+#' @return No value 
 #' @export
 #'
 #' @examples
