@@ -24,13 +24,13 @@ initDb = function(mandatory=F){
   for(tissue in tissues){
     net = nets[which(tissues == tissue)]
     residual = residuals[which(tissues == tissue)]
-    CoExpNets::addNet(which.one="rosmap",
+    CoExpNets::addNet(which.one="CoExpROSMAP",
            tissue=tissue,
            netfile=net,
            ctfile=paste0(the.dir,"/",net,"_celltype.csv"),
            gofile=paste0(the.dir,"/",net,"_gprof.csv"),
            exprdatafile=paste0(the.dir,"/",
-                              residual,".resids.rds"),
+                              residual),
            overwrite=mandatory)
   }
 }
