@@ -1,0 +1,16 @@
+Package: CoExpROSMAP
+Type: Package
+Title: This package is a suite of co-expression networks to be used with 
+CoExpNets package, also available in GitHub. It is based on the ROSMAP project.
+Version: 0.1.0
+Author: Juan A. Botia
+Maintainer: Juan A. Botia <juanbot@um.es>
+Description: It contains 4 co-expression networks from > 600 samples of frontal cortex from 
+the ROSMAP study. They have variable cognitive decline. Consequently, they were divided into not
+AD, probable AD and AD. A co-expression network is available for each groups and a single network
+with all samples.
+License: Creative Commons
+Encoding: UTF-8
+LazyData: true
+Imports: 
+  CoExpNets
