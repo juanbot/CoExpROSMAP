@@ -16,7 +16,7 @@ initDb = function(mandatory=F){
   nets = c("netnotad.8.it.50.rds",
            "netprobad.11.it.50.rds",
            "netad.8.it.50.rds",
-           "netROSMAPSingle.6.it.50.rds")
+           "netallsamples.6.it.50.rds")
   residuals = c("fpkm.casectrl.qc.qn.combat.covs.svas2.res.cogdx.notad.rds",
                 "fpkm.casectrl.qc.qn.combat.covs.svas2.res.cogdx.probad.rds",
                 "fpkm.casectrl.qc.qn.combat.covs.svas2.res.cogdx.ad.rds",

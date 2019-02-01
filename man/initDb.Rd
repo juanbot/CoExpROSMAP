@@ -8,7 +8,10 @@ CoExpNets}
 initDb(mandatory = F)
 }
 \arguments{
-\item{mandatory}{}
+\item{mandatory}{If this parameter is `TRUE` then the networks will be added no matter whether they were already there.}
+}
+\value{
+No value
 }
 \description{
 initDb - Initialization of the package so the ROSMAP networks can be used with
