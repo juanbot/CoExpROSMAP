@@ -1,7 +1,7 @@
 
 # Brief instructions for the package CoExpROSMAP.
 
-ROSMAP is a project you can access from here <https://www.synapse.org/#!Synapse:syn3219045>. It includes transcriptomics from more than 600 samples. Using the package <https://github.org/CoExpNets> we created four co-expression networks for them.
+ROSMAP is a project you can access from here <https://www.synapse.org/#!Synapse:syn3219045>. It includes transcriptomics from more than 600 samples. Using the package <https://github.com/juanbot/CoExpNets> we created four co-expression networks for them.
 
 # Introduction
 
@@ -28,8 +28,9 @@ Recommended that you install first CoExpNets
 ```r
 devtools::install_github('juanbot/CoExpNets')
 ```
-And then this package
+And then this package, and then you install the networks so you can access them from the CoExpNets functions.
 
 ```r
 devtools::install_github('juanbot/CoExpROSMAP')
+CoExpROSMAP::initDb()
 ```
