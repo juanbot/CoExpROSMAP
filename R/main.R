@@ -23,12 +23,13 @@ initDb = function(mandatory=F){
                 "fpkm.casectrl.qc.qn.combat.covs.svas2.res.rds")
   for(tissue in tissues){
     net = nets[which(tissues == tissue)]
+    net = paste0(the.dir,"/",net)
     residual = residuals[which(tissues == tissue)]
     CoExpNets::addNet(which.one="CoExpROSMAP",
            tissue=tissue,
            netfile=net,
-           ctfile=paste0(the.dir,"/",net,"_celltype.csv"),
-           gofile=paste0(the.dir,"/",net,"_gprof.csv"),
+           ctfile=paste0(net,"_celltype.csv"),
+           gofile=paste0(net,"_gprof.csv"),
            exprdatafile=paste0(the.dir,"/",
                               residual),
            overwrite=mandatory)
