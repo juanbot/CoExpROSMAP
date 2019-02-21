@@ -28,7 +28,7 @@ initDb = function(mandatory=F){
     CoExpNets::addNet(which.one="CoExpROSMAP",
            tissue=tissue,
            netfile=net,
-           ctfile=paste0(net,"_celltype.csv"),
+           ctfile=paste0(net,".celltype.csv"),
            gofile=paste0(net,"_gprof.csv"),
            exprdatafile=paste0(the.dir,"/",
                               residual),
