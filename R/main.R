@@ -35,3 +35,43 @@ initDb = function(mandatory=F){
            overwrite=mandatory)
   }
 }
+
+getCovariates = function(tissue=tissue,which.one="CoExpROSMAP"){
+  expr.data = getExprDataFromTissue(tissue=tissue,which.one=which.one)
+  the.dir = system.file("", "extdata", package = "CoExpROSMAP")
+  key = read.csv(paste0(the.dir,"/ROSMAP_IDkey.csv"))
+  covs = read.csv(paste0(the.dir,"/ROSMAP_clinical.csv"))
+  ids = rownames(expr.data)
+  mask = key$projid[match(ids,key$mrna_id)]
+  nonmatchingids = ids[is.na(mask)]
+  goodids = NULL
+  for(id in nonmatchingids){
+    subids = stringr::str_split(id,"_")
+    recid = paste0(subids[[1]][1],"_",subids[[1]][2])
+    goodids = c(goodids,recid)
+  }
+  mask[is.na(mask)] = key$projid[match(goodids,key$mrna_id)]
+  samples = mask
+  #samples = rosmap.fromRNAseqID2ProjectID(rownames(expr.data))
+  gender = as.factor(covs$msex[match(samples,covs$projid)])
+  pmi = as.numeric(covs$pmi[match(samples,covs$projid)])
+  braaksc = as.factor(covs$braaksc[match(samples,covs$projid)])
+  cogdx = as.factor(covs$cogdx[match(samples,covs$projid)])
+  educ = as.numeric(covs$educ[match(samples,covs$projid)])
+  ceradsc = as.factor(covs$ceradsc[match(samples,covs$projid)])
+  age = as.character(covs$age_death[match(samples,covs$projid)])
+  
+  #Impute
+  pmi[is.na(pmi)] = mean(pmi[!is.na(pmi)])
+  age[grep("90\\+",age)] = "90"
+  age = as.numeric(age)
+  race = as.factor(covs$race[match(samples,covs$projid)])
+  
+  batch = stringr::str_split(rownames(expr.data),"_")
+  batch = as.factor(unlist(lapply(batch,function(x){return(x[[3]])})))
+  
+  toreturn = data.frame(batch,gender,pmi,age,race,braaksc,cogdx,educ,ceradsc)
+  
+  rownames(toreturn) = rownames(expr.data)
+  return(toreturn)
+}
