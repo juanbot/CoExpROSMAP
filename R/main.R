@@ -36,6 +36,15 @@ initDb = function(mandatory=F){
   }
 }
 
+#' Title
+#'
+#' @param tissue 
+#' @param which.one 
+#'
+#' @return
+#' @export
+#'
+#' @examples
 getCovariates = function(tissue=tissue,which.one="CoExpROSMAP"){
   expr.data = getExprDataFromTissue(tissue=tissue,which.one=which.one)
   the.dir = system.file("", "extdata", package = "CoExpROSMAP")
