@@ -46,10 +46,11 @@ initDb = function(mandatory=F){
 #'
 #' @examples
 getCovariates = function(tissue=tissue,which.one="CoExpROSMAP"){
-  expr.data = getExprDataFromTissue(tissue=tissue,which.one=which.one)
+ 
+  expr.data = CoExpNets::getExprDataFromTissue(tissue=tissue,which.one=which.one)
   the.dir = system.file("", "extdata", package = "CoExpROSMAP")
-  key = read.csv(paste0(the.dir,"/ROSMAP_IDkey.csv"))
-  covs = read.csv(paste0(the.dir,"/ROSMAP_clinical.csv"))
+  key = utils::read.csv(paste0(the.dir,"/ROSMAP_IDkey.csv"))
+  covs = utils::read.csv(paste0(the.dir,"/ROSMAP_clinical.csv"))
   ids = rownames(expr.data)
   mask = key$projid[match(ids,key$mrna_id)]
   nonmatchingids = ids[is.na(mask)]
