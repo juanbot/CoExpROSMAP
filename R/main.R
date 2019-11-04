@@ -36,6 +36,8 @@ initDb = function(mandatory=F){
   }
 }
 
+
+
 #' Title
 #'
 #' @param tissue 
@@ -84,4 +86,17 @@ getCovariates = function(tissue=tissue,which.one="CoExpROSMAP"){
   
   rownames(toreturn) = rownames(expr.data)
   return(toreturn)
+}
+
+generateModuleTOMs = function(out.path){
+  the.dir = system.file("", "extdata", package = "CoExpROSMAP")
+  tissues = c("notad","probad","ad","allsamples")
+  betas = c(8,11,8,6)
+  
+  for(tissue in tissues){
+    beta = betas[which(tissues == tissue)]
+    CoExpNets::getModuleTOMs(tissue=tissue,
+                             beta=beta,
+                             out.path=out.path)
+  }
 }
