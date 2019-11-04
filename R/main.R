@@ -97,6 +97,9 @@ generateModuleTOMs = function(out.path){
     beta = betas[which(tissues == tissue)]
     CoExpNets::getModuleTOMs(tissue=tissue,
                              beta=beta,
-                             out.path=out.path)
+                             out.path=out.path,
+                             which.one="CoExpROSMAP",
+                             package="CoExpROSMAP",
+                             instfolder="extdata")
   }
 }
